@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  keycloak:
+    image: jboss/keycloak
+    ports:
+      - "8081:8080"
+    volumes:
+      - "./data/keycloak-add-user.json:/opt/jboss/keycloak/standalone/configuration/keycloak-add-user.json:ro"
+      - "./data/realm-export.json:/opt/jboss/keycloak/standalone/configuration/realm-export.json:ro"
